@@ -1,0 +1,6 @@
+@IndoorFarmMonitoring_HostAddress = http://localhost:5090
+
+GET {{IndoorFarmMonitoring_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

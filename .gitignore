@@ -1,0 +1,37 @@
+# Build results
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# VS Code
+.vscode/
+
+# .NET
+*.pdb
+*.mdb
+*.cache
+*.log
+*.db
+*.db-shm
+*.db-wal
+
+# Secrets & config
+.env
+appsettings.Development.json
+appsettings.Local.json
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Others
+*.swp
+*.bak
+*.tmp
+*.old
+*.orig
