@@ -1,0 +1,24 @@
+[
+  {
+    "tray_id": 1,
+    "temperature": 25.5,
+    "humidity": 60,
+    "light": 1000,
+    "plant_type": "Lettuce",
+    "target_temperature": 24,
+    "target_humidity": 65,
+    "target_light": 1200,
+    "is_out_of_range": true
+  },
+  {
+    "tray_id": 2,
+    "temperature": 27,
+    "humidity": 55,
+    "light": 900,
+    "plant_type": "Spinach",
+    "target_temperature": 26,
+    "target_humidity": 60,
+    "target_light": 950,
+    "is_out_of_range": true
+  }
+]

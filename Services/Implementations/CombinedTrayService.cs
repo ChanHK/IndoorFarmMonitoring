@@ -1,10 +1,11 @@
-
+using System.Text.Json;
 
 
 public class CombinedTrayService : ICombinedTrayService
 {
     private readonly ISensorService _sensorService;
     private readonly IPlantConfigService _plantConfigService;
+    private readonly string _jsonFilePath = Path.Combine("Data", "plant_data.json");
 
     public CombinedTrayService(ISensorService sensorService, IPlantConfigService plantConfigService)
     {
@@ -35,6 +36,29 @@ public class CombinedTrayService : ICombinedTrayService
                                            || sensor.light < config.target_light
                           };
         
-        return combinedData.ToList();
+        var resultList = combinedData.ToList();
+
+        await SaveToJsonAsync(resultList);
+
+        return resultList;
+    }
+
+    private async Task SaveToJsonAsync(List<CombinedTray> data)
+    {
+        try
+        {
+            Directory.CreateDirectory(Path.GetDirectoryName(_jsonFilePath)!);
+
+            var json = JsonSerializer.Serialize(data, new JsonSerializerOptions
+            {
+                WriteIndented = true
+            });
+
+            await File.WriteAllTextAsync(_jsonFilePath, json);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"[SaveToJsonAsync] Error writing JSON file: {ex.Message}");
+        }
     }
 }
