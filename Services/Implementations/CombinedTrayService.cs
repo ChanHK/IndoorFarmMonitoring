@@ -29,7 +29,10 @@ public class CombinedTrayService : ICombinedTrayService
                             plant_type = config.plant_type,
                             target_temperature = config.target_temperature,
                             target_humidity = config.target_humidity,
-                            target_light = config.target_light
+                            target_light = config.target_light,
+                            is_out_of_range = sensor.temperature < config.target_temperature
+                                           || sensor.humidity < config.target_humidity
+                                           || sensor.light < config.target_light
                           };
         
         return combinedData.ToList();
