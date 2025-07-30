@@ -7,8 +7,8 @@ dotnet run
 The API will be available at:  
 `http://localhost:5000/plant-sensor-data`
 
-> Swagger UI (if enabled):  
-> `http://localhost:5000/swagger`
+Swagger UI:  
+`http://localhost:5000/swagger`
 
 
 ---
