@@ -4,6 +4,12 @@
 dotnet run
 ```
 
+### Test the project
+
+```bash
+dotnet test
+```
+
 The API will be available at:  
 `http://localhost:5000/plant-sensor-data`
 
